@@ -46,7 +46,7 @@
               <label for="price">Image</label>
               <input type="file" class="form-control" name="image_url"/>
           </div>
-          <button type="submit" class="btn btn-block btn-danger">Create new</button>
+          <button type="submit" class="mt-4 form-control btn btn-block btn-danger">Create new</button>
       </form>
   </div>
 </div>

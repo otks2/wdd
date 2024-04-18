@@ -8,13 +8,14 @@
                     <div class="clearfix visible-md-block"></div>
                 @endif
                 <div class="col">
-                    <div class="card mb-4" style="width: 18rem;">
+                    <div class="card mb-4" style="width: 18rem; height: 36rem">
                         <img src="{{ asset('storage/images/' . $item->image_url) }}" alt="Product Image" width="240px" height="200px">
-                        <div class="card-body">
+                        <div class="card-body bg-dark text-white">
                             <h5 class="card-title">{{$item->name}}</h5>
                             <p class="card-text">{{$item->price}}</p>
-                            <a href="{{route('legos.show',$item->id)}}" class="btn btn-primary">Details</a>
+
                         </div>
+                        <a href="{{route('legos.show',$item->id)}}" class="btn btn-primary">Details</a>
                     </div>
                 </div>
             @endforeach

@@ -7,31 +7,62 @@
   .hidden-form {
       display: None;
   }
+  .description-tooltip {
+      display: inline-block;
+      position: relative;
+  }
+
+  .description-tooltip::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      left: 0;
+      bottom: 100%;
+      background: black;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      visibility: hidden;
+  }
+
+  .description-tooltip:hover::after {
+      visibility: visible;
+  }
+
+  .description-tooltip {
+      white-space: nowrap;
+      width: 150px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  }
 </style>
 <script
     src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
     crossorigin="anonymous"></script>
 <div class="push-top">
-    <div>
-        <div class="float-left">
-        <form class="" action="{{ route('search') }}" method="GET">
-            <input type="text" name="search">
-            <button type="submit">Search</button>
-        </form>
+    <div class="row">
+
+        <div class="col-6">
+            <form class="btn-lg" action="{{ route('search') }}" method="GET">
+                <input type="text" name="search">
+                <button type="submit">Search</button>
+            </form>
         </div>
-        <div class="float-right">
+
+        <div class="col-6 text-end">
             <a href="{{ route('dashboard.create')}}" class="btn btn-primary btn-lg">Create</a>
         </div>
+
     </div>
-        @if(session()->get('success'))
-    <div class="alert alert-success">
-      {{ session()->get('success') }}
-    </div><br />
-  @endif
+
+    @if(session()->get('success'))
+        <div class="alert alert-success">
+            {{ session()->get('success') }}
+        </div>
+    @endif
   <table class="table push-top">
     <thead>
-        <tr class="table-warning">
+        <tr class="table table-striped" style="background-color: #BED7DC;">
           <td>ID</td>
           <td>Product Name</td>
           <td>Description</td>
@@ -48,7 +79,9 @@
         <tr data-id="{{$item->id}}">
             <td>{{$item->id}}</td>
             <td>{{$item->name}}</td>
-            <td>{{$item->description}}</td>
+            <td>
+                {{$item->description}}
+            </td>
             <td>{{$item->author}}</td>
             <td>{{$item->price}}</td>
             <td><img src="{{ asset('storage/images/' . $item->image_url) }}" alt="Product Image" width="240px" height="200px"></td>
@@ -70,9 +103,9 @@
     <div class="col-6">
         <div class="card-body">
         </div>
-
         <div class="hidden-form">
         </div>
+
     </div>
 <div>
 @endsection

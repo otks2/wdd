@@ -43,7 +43,7 @@
               <input type="text" class="form-control" name="price" value="{{ $legos->price }}"/>
           </div>
 
-          <button type="submit" class="btn btn-block btn-danger">Update</button>
+          <button type="submit" class="mt-4 form-control btn btn-block btn-danger">Update</button>
       </form>
   </div>
 </div>

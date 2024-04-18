@@ -21,7 +21,7 @@
 {{--                                        <div class="ml-2"> <small class="dis-price">$59</small> <span>40% OFF</span> </div>--}}
                                     </div>
                                 </div>
-                                <p class="about">{{$product->description}}</p>
+                                <p class="">{{$product->description}}</p>
 {{--                                <div class="sizes mt-5">--}}
 {{--                                    <h6 class="text-uppercase"></h6> <label class="radio"> <input type="radio" name="size" value="S" checked> <span>S</span> </label> <label class="radio"> <input type="radio" name="size" value="M"> <span>M</span> </label> <label class="radio"> <input type="radio" name="size" value="L"> <span>L</span> </label> <label class="radio"> <input type="radio" name="size" value="XL"> <span>XL</span> </label> <label class="radio"> <input type="radio" name="size" value="XXL"> <span>XXL</span> </label>--}}
 {{--                                </div>--}}
